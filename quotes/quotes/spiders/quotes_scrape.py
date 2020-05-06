@@ -1,12 +1,11 @@
 # -*- coding: utf-8 -*-
 import scrapy
-
 from scrapy_splash import SplashRequest
 
 
 class QuotesScrapeSpider(scrapy.Spider):
     name = 'quotes_scrape'
-    allowed_domains = ['quotes.toscrape.com/js/']
+    allowed_domains = ['quotes.toscrape.com']
     
 
     script = '''
@@ -17,7 +16,7 @@ class QuotesScrapeSpider(scrapy.Spider):
             assert(splash:wait(1))
             return splash:html()
         end
-    '''    
+    '''  
 
     def start_requests(self):
         print("\nHELLOOO\n")
